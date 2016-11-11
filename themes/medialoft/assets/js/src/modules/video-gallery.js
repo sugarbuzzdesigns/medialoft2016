@@ -117,6 +117,10 @@ var ml = ml || {};
 
 			this.queryParams = $.getQueryParameters();
 
+			if(typeof oneGalleryVideo != 'undefined' && oneGalleryVideo && this.$currentVideo === null){
+				$('.gallery-overlay').find('.close-video').hide();
+			}
+
 			// open video based on hash
 			if(this.url.currentPath != '/' && this.url.currentPath){
 				if(typeof oneGalleryVideo != 'undefined' && oneGalleryVideo && this.$currentVideo === null){
@@ -137,7 +141,7 @@ var ml = ml || {};
 				// 	_this.$galleryNav.hide();
 				// });
 
-				console.log('only one video');
+				// console.log('only one video');
 				_this.$galleryNav.hide();
 				_this.openVideoInOverlay(_this.$galleryItems[0]);
 				// When we have a single video, let's show
@@ -451,7 +455,7 @@ var ml = ml || {};
 				});
 
 				_this.$galleryOverlay.find('video').on('webkitenterfullscreen', function(){
-					console.log('full screen enter');
+					// console.log('full screen enter');
 				});
 			});
 		},
@@ -548,32 +552,32 @@ var ml = ml || {};
 
 			if(evt.path === '/'){
 				if(evt.type === 'internalChange'){
-					console.log('from app to close item');
+					// console.log('from app to close item');
 				} else {
 					if(!this.url.firstLoad){
 						this.closeVideoInOverlay();
 					}
-					console.log('from browser to close item');
+					// console.log('from browser to close item');
 				}
 			} else {
 				if(evt.type === 'internalChange'){
 					if(this.overlayOpen){
-						console.log('from app, overlay nav');
+						// console.log('from app, overlay nav');
 					} else {
-						console.log('from app, to OPEN item');
+						// console.log('from app, to OPEN item');
 					}
 				} else {
 					if(this.overlayOpen){
 						if(this.url.firstLoad){
-							console.log('from browser, open item on load');
+							// console.log('from browser, open item on load');
 						} else {
 							dir = this.getNavigateGalleryOverlayDirection(evt.path.slice(1));
 							this.navigateGalleryOverlay(dir);
-							console.log('from browser, overlay nav', dir);
+							// console.log('from browser, overlay nav', dir);
 						}
 					} else {
 						this.openVideoFromHash();
-						console.log('from browser, to OPEN item');
+						// console.log('from browser, to OPEN item');
 					}
 				}
 			}

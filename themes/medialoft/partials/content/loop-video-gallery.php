@@ -39,8 +39,12 @@
 		        	$deepLinktitle = seoUrl(get_the_title());
 
 					$cats = get_the_category();
-					$cat = $cats[0]->name;
-					$catLower = strtolower($cat);
+
+					if(isset($cats[0])){
+						$cat = $cats[0]->name;
+						$catLower = strtolower($cat);
+					}
+
 					$desktopURL = get_post_meta( get_the_ID(), 'medialoft_desktop_url', true );
 					$mobileURL = get_post_meta( get_the_ID(), 'medialoft_mobile_url', true );
 					$poster = get_post_meta( get_the_ID(), 'medialoft_video_poster', true );
