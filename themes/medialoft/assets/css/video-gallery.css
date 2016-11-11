@@ -1,0 +1,695 @@
+@media only screen
+	and (min-width: 320px) {
+
+	body {
+		background: #202020;
+		color: #fff;
+		font-size: 16px;
+	}
+
+	body a {
+		color: #fff;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	body .wrap {
+		height: auto;
+		min-height: 100%;
+	}
+
+	/**
+	 * Custom Grid Styles
+	 */
+
+	.grid {
+		padding: 0;
+	}
+
+	/**
+	 * SVG BG
+	 */
+
+	.wrap .svg-container {
+		position: fixed;
+	}
+
+	.wrap .svg-container svg {
+		width: 160%;
+	}
+
+	.wrap .svg-container svg line, .wrap .svg-container svg path {
+		stroke: #3B3B3B;
+    	stroke-width: 0.5px;
+	}
+
+	/**************************
+	  Loader
+	***************************/
+	#gallery-loader {
+		background: #ef4330;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1000;
+	}
+	#gallery-loader .inner {
+		height: 50%;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
+	}
+	#gallery-loader .inner svg {
+		width: 200px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
+	}
+	#gallery-loader .inner svg .left {
+		stroke: #fff;
+		fill-opacity: 0;
+		stroke-width: 1;
+		stroke-dasharray: 540;
+		stroke-dashoffset: 540;
+		-webkit-animation-name: draw;
+		animation-name: draw;
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+	#gallery-loader .inner svg .right {
+		stroke: #fff;
+		fill-opacity: 0;
+		stroke-width: 1;
+		stroke-dasharray: 1100;
+		stroke-dashoffset: 1100;
+		-webkit-animation-name: draw;
+		animation-name: draw;
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	#gallery-loader p {
+		text-align: center;
+		margin: 0;
+		-webkit-animation-name: fadeOutIn;
+		animation-name: fadeOutIn;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	@-webkit-keyframes fadeOutIn {
+	  0% {
+	    opacity: 1;
+	  }
+	  50% {
+		opacity: 0.5
+	  }
+	  100% {
+		opacity: 1;
+	  }
+	}
+
+	@keyframes fadeOutIn {
+	  0% {
+	    opacity: 1;
+	  }
+	  50% {
+		opacity: 0.5
+	  }
+	  100% {
+		opacity: 1;
+	  }
+	}
+
+	.galleryFadeIn {
+		transition: all 0.5s ease;
+		opacity: 1 !important;
+	}
+
+	.gallery-overlay-transition {
+		pointer-events: none;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(239, 67, 48, 1);
+	}
+
+	/* Galleries Listing */
+	.toc .grid {
+	    margin: 0;
+	    padding-left: 20px;
+	    position: relative;
+	    z-index: 1;
+	}
+
+	.toc .grid .galleries {
+		padding-top: 100px;
+	}
+
+	.toc .grid .galleries h2 {
+		color: #fff;
+		background: #EF4330;
+		padding: 15px;
+	}
+
+	/* Main Gallery */
+	.gallery {
+		opacity: 0;
+		padding: 120px 30px 0 30px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.gallery.loaded #gallery-loader {
+		display: none;
+	}
+
+	.page-video-galleries.page-parent #gallery-loader {
+		display: none;
+	}
+
+	.return-breadcrumb {
+		font-family: 'KlavikaWebBasicRegular';
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 12px;
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin: 0 0 20px 0;
+	}
+
+	.return-breadcrumb span {
+		display: inline-block;
+		vertical-align: middle;
+	    position: relative;
+	    top: -1px;
+	    margin-right: 5px;
+	}
+
+	.return-breadcrumb span + span {
+		top: auto;
+		margin-right: 0;
+	}
+
+	/* Main Title of Gallery */
+	h1.gallery-header {
+		text-align: center;
+		font-size:  1.750em;
+		color: #fff;
+		margin: 0;
+		width: 100%;
+	}
+
+	h1.gallery-header span {
+		background: #373737;
+		padding: 7px 15px;
+		display: inline-block;
+		width: 100%;
+	}
+
+	/* Main Gallery ML Logo */
+	#video-gallery-main-logo {
+		display: block;
+		padding: 20px 0 0 10px;
+	    position: absolute;
+	    z-index: 2;
+	    top: 0;
+	    left: 0;
+	    /*-webkit-transition: opacity 0.5s;*/
+	    		/*transition: opacity 0.5s;*/
+	}
+
+	#video-gallery-main-logo img {
+		height: 23px;
+		width: 148px;
+		transition: all 0.5s ease;
+	}
+
+	#video-gallery-main-logo span {
+		padding: 10px;
+		display: block;
+		background: #202020;
+	}
+
+	.overlay-open #video-gallery-main-logo img {
+		height: 20px;
+		width: 128px;
+	}
+
+	.gallery-inner {
+		padding-top: 60px;
+	}
+
+	.gallery-item {
+		margin-bottom: 50px;
+	}
+
+	.gallery-video {
+
+	}
+
+	.video-wrap {
+		width: 100%;
+		padding-bottom: 56.25%;
+		position: relative;
+		margin-bottom: 18px;
+		transition: height 0.5s;
+		cursor: pointer;
+	}
+
+	.video-wrap .video-js {
+		background: transparent;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.video-placeholder {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-size: cover;
+	}
+
+	.title {
+		margin-bottom: 13px;
+		font-size: 1.250em;
+		line-height: normal;
+		margin-top: 0;
+		cursor: pointer;
+	}
+
+	.category {
+		display: inline-block;
+		background: #3D4043;
+	    padding: 7px 12px 4px;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		transition: all 0.5s ease;
+		font-size: 0.9em;
+		cursor: pointer;
+	}
+
+	.gallery-item:hover .video-placeholder {
+		-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+	}
+
+
+	/* Hover over Video Item */
+	.gallery-item:hover .category {
+		background: #EF4330;
+	}
+
+	.gallery-item .video-wrap:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		background: #EF4330;
+		height: 100%;
+		width: 100%;
+		transition: all 0.5s ease;
+	}
+
+	.gallery-item:hover .video-wrap:after {
+		opacity: 0.7;
+	}
+
+
+	/* Gallery overlay */
+	.gallery-overlay .close-video {
+		z-index: 1;
+		width: 63px;
+		height: 63px;
+		cursor: pointer;
+	}
+
+	.gallery-overlay .close-video i {
+		height: 30px;
+		width: 30px;
+	}
+
+	.gallery-overlay {
+		width: 100%;
+		min-height: 100%;
+	    position: absolute;
+	    z-index: 2;
+	    display: none;
+	    top: 0;
+	    left: 0;
+	    background: #333;
+	}
+
+	.gallery-overlay .video-wrap {
+		margin-bottom: 0;
+		background: #000;
+		position: relative;
+		padding-bottom: 0;
+	}
+
+	.gallery-overlay .copy {
+		padding: 20px 30px 0;
+	}
+
+	.gallery-overlay .copy .col .content {
+		padding-left: 0;
+	}
+
+	.gallery-overlay .copy .col + .col .content {
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 10px;
+	}
+
+	.gallery-overlay .title,
+	.gallery-overlay .description {
+		margin: 0;
+	}
+
+	.gallery-overlay .title {
+	    margin: 0 0 16px;
+	    cursor: default;
+	}
+
+	.gallery-overlay .description {
+	    line-height: 25px;
+	    font-size: 0.855em;
+		font-family: 'ProximaNova-Regular';
+	}
+
+	.gallery-overlay .category:empty {
+		display: none;
+	}
+
+	.gallery-overlay .share-link {
+		color: #FFEE6F;
+		font-family: 'KlavikaWebBasicRegular';
+		text-transform: uppercase;
+		font-size: 0.688em;
+	}
+
+	.gallery-overlay .share-link i {
+		background: url(../images/icons/link-icon.png);
+		background-size: cover;
+		display: inline-block;
+		height: 13px;
+		width: 13px;
+		vertical-align: middle;
+	    position: relative;
+	    margin-right: 10px;
+	    top: -2px;
+	}
+
+	.gallery-overlay .gallery-overlay-item {
+		opacity: 0;
+		transition: all 0.5s;
+	}
+
+	.gallery-overlay .video-wrap .vjs-poster {
+		background-size: cover;
+	    -webkit-filter: grayscale(100%);
+	    		filter: grayscale(100%);
+	}
+
+	.gallery-overlay .video-wrap:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #EF4330;
+		opacity: 0.82;
+		transition: opacity 0.5s;
+	}
+
+	.gallery-overlay.play-video .video-wrap:after {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.gallery-overlay .video-start {
+		transition: opacity 0.5s;
+	}
+
+	.gallery-overlay .video-start, .gallery-overlay .video-start div {
+		height: 40px;
+		width: 40px;
+	}
+
+	.gallery-overlay .video-start i {
+		border-left: 12px solid #fff;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent
+	}
+
+	.gallery-overlay.play-video .video-start {
+		opacity: 0;
+	}
+
+
+	.gallery-overlay .video-start div:first-child {
+		background: #595C5F;
+	}
+
+	.gallery-overlay .video-wrap video {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+
+	.gallery-overlay nav {
+		width: 100%;
+		text-align: right;
+		padding: 10px 30px 20px 0;
+		opacity: 0;
+		transition: all 0.5s;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	.gallery-overlay nav span {
+		background-image: url(../images/icons/left-carousel-arrow.png);
+		background-size: cover;
+		display: inline-block;
+		height: 27px;
+		width: 27px;
+		cursor: pointer;
+	}
+
+	.gallery-overlay nav span.next {
+		background-image: url(../images/icons/right-carousel-arrow.png);
+		margin-left: 15px;
+	}
+
+	.gallery-overlay nav span.disabled {
+		opacity: 0.2;
+		pointer-events: none;
+	}
+
+	/* Page Nav on Main Gallery List Page */
+	.pagenav {
+		font-size: 20px;
+	}
+
+	.pagenav li {
+		margin-bottom: 10px;
+	}
+
+	.pagenav li a {
+		-webkit-transition: all 0.25s;
+				transition: all 0.25s;
+	}
+
+	.pagenav li a:hover {
+		color: #ea5340;
+	}
+}
+
+/* ----------- iPhone 6 ----------- */
+@media only screen
+	and (min-width: 375px)
+	and (-webkit-min-device-pixel-ratio: 2) {
+	/* Main Gallery ML Logo */
+	#video-gallery-main-logo {
+		padding: 30px 0 0 20px;
+	}
+}
+
+@media only screen and (min-width: 767px) {
+	.wrap .svg-container svg line, .wrap .svg-container svg path {
+		stroke: #3B3B3B;
+		stroke-width: 0.3px;
+	}
+
+	.gallery {
+		padding: 180px 0 0 30px;
+	}
+
+	.gallery-inner {
+		padding-top: 97px;
+	}
+
+	/* TOC Styles */
+	.toc .grid {
+		max-width: 1140px;
+	    min-width: 755px;
+	    margin: 0;
+	}
+
+	/* Logo */
+	#video-gallery-main-logo img {
+		height: 27px;
+		width: 177px;
+		transition: all 0.5s ease;
+	}
+
+	/* Logo */
+	.overlay-open #video-gallery-main-logo img {
+/*		height: 25px;
+		width: 168px;*/
+		height: 27px;
+		width: 177px;
+	}
+
+	/* Main Gallery ML Logo */
+	#video-gallery-main-logo {
+		display: block;
+		padding: 37px 0 0 28px;
+	    position: absolute;
+	    z-index: 2;
+	    top: 0;
+	    left: 0;
+	    /*-webkit-transition: opacity 0.5s;*/
+	    		/*transition: opacity 0.5s;*/
+	}
+
+	/* Main Title of Gallery */
+	h1.gallery-header {
+		text-align: center;
+		font-size:  1.750em;
+		color: #fff;
+		margin: 0;
+		width: auto;
+	}
+
+	/* Gallery Header */
+	h1.gallery-header span {
+		background: #373737;
+		padding: 10px 50px;
+		display: inline-block;
+		width: auto;
+		font-size: 1.43em;
+	}
+
+	.title {
+		font-size: 1.30em;
+	}
+
+	/* Open Gallery Item */
+	.gallery-overlay .title {
+		font-size: 1.5em;
+		margin: 0 0 18px;
+	}
+
+	.gallery-overlay .category,
+	.gallery-overlay .share-link,
+	.gallery-overlay .description {
+		font-size: 0.788em;
+	}
+
+	.gallery-overlay .category {
+		font-size: 1em;
+		margin-right: 30px;
+	}
+
+	.gallery-overlay .share-link {
+		letter-spacing: 1px;
+	}
+
+	.gallery-overlay .description {
+		line-height: 27px;
+		font-size: 0.888em;
+	}
+
+	.gallery-overlay .copy .col + .col .content {
+		padding-left: 0;
+		padding-right: 150px;
+		margin-top: 35px;
+	}
+
+	.gallery-overlay .video-wrap {
+		margin-bottom: 0;
+		background: #000;
+		position: relative;
+		padding: 0;
+	}
+
+	.gallery-overlay .copy {
+		padding: 63px 40px 0;
+	}
+
+	.gallery-overlay nav span {
+		height: 45px;
+		width: 45px;
+	}
+
+	.gallery-overlay nav span.next {
+		margin-left: 28px;
+	}
+
+}
+
+/* Desktop Size 2 */
+@media handheld, only screen and (max-width: 1045px) {
+	.wrap .svg-container svg {
+		width: 110%;
+	}
+
+	.gallery-overlay .copy .col + .col .content {
+		/*padding-right: 50px;*/
+	}
+}

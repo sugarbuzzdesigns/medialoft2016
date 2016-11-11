@@ -1,0 +1,185 @@
+/**************************
+Logo
+***************************/
+.logo {
+	&.interior {
+		width: 72px;
+		height: 72px;	
+
+		img {
+			width: 44px;
+		}
+	}
+}
+
+.play-reel {
+	display: block;
+	margin-top: 20px;
+
+	span {
+		display: none;
+	}
+}
+
+/**************************
+Main menu 
+***************************/		
+.main-menu-btn {
+	height: 63px;
+	font-size: 20px;
+
+	.open-menu {
+		padding: 20px 30px 0;
+	}
+
+    .close-menu {
+		height: 63px;
+		width: 63px;
+    }	
+}
+
+.isTouch .mobile .main-menu-open .main-menu,
+.isTouch .tablet .main-menu-open .main-menu {
+	.open-menu {
+		bottom: -68px;
+	}
+}
+
+.main-menu {
+    padding-top: 90px;
+
+	.menu-interior {
+		ul {
+			li {
+				margin-bottom: 28px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		a {
+			font-size: 34px;
+		}
+	}
+}
+
+.right-menu-btn {
+    height: 63px;
+    font-size: 20px;
+
+    .close-menu {
+		height: 63px;
+		width: 63px;
+    }	
+
+    .open-menu {
+		padding: 20px 30px 0;    	
+    }
+}
+
+.right-menu {
+	padding-top: 120px;
+}
+
+/**************************
+Cta & Tagline
+***************************/		
+.cta {
+	.tagline {
+		span {
+		    font-size: 34px;
+		    padding: 5px 16px;
+		}
+	}	
+}
+
+/**************************
+PAGE SPECIFIC STYLES
+***************************/
+/**************************
+***************************/
+/**************************
+***************************/
+/**************************
+***************************/
+.page-about {
+	.cta {
+		.tagline {
+			span {
+				font-size: 30px;
+			}
+		}
+
+		p {
+		    color: #fff;
+		    line-height: 22px;
+		    margin: 32px 0 22px 0;
+		    font-size: 14px;			
+		}
+	}
+}	
+
+/**************************
+Blog
+***************************/		
+#blog {
+	.articles article .title {
+    	font-size: 28px;
+	}
+
+	.show-article {
+		.back {
+		    height: 30px;
+		    width: 23px;
+		    display: block;
+		    position: fixed;
+		    bottom: 90px;
+		}
+	}	
+}
+
+/**************************
+Work
+***************************/		
+#work-items-window {
+	.nav-arrow-down	{
+		bottom: 80px;
+	}
+}
+
+.work-carousel {
+	.work-copy {
+		padding: 150px 45px 5% 45px;
+	}
+}
+
+/**************************
+Services
+***************************/		
+.landing blockquote .quote {
+	font-size: 28px;
+	line-height: 30px;		
+}
+
+.service-section {
+	.summary {
+		top: 30%;
+
+		p {
+			line-height: 21px;
+			margin: 20px 0 0 0;
+			font-size: 17px;		
+		}
+	}
+
+	.number {
+		font-size: 57px;
+	}
+
+	.service {
+		font-size: 33px;
+		margin-top: 20px;
+	}	
+}

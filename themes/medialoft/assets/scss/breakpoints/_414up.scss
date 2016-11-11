@@ -1,0 +1,98 @@
+/**************************
+Logo
+***************************/
+.logo {
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	top: 32px;
+	left: 18px;
+	margin: 0;
+	display: block;
+	z-index: 5;
+	transition: all 0.5s ease;
+
+	img {
+		width: 100%;
+	}
+
+	h1 {
+		margin: 0;
+	}
+
+	&.interior {
+		width: 91px;
+		height: 91px;
+		background-color: #fff;
+		top: 0;
+		left: 0;	
+		transition: all 0.5s ease;	
+
+		img {
+			width: 59px;
+			position: absolute;
+			@include center-me;
+		}
+	}
+}
+
+/**************************
+Main menu 
+***************************/
+.main-menu {
+    padding-top: 100px;
+
+	.menu-interior {
+		ul {
+			li {
+				margin-bottom: 32px;
+			}
+		}
+
+		a {
+			font-size: 30px;
+		}
+	}
+}
+
+.right-menu {
+	padding-top: 150px;
+}
+
+/**************************
+Cta & Tagline
+***************************/		
+.cta {
+	.tagline {
+		span {
+		    font-size: 38px;
+		    padding: 5px 16px;
+		}
+	}	
+}
+
+/**************************
+PAGE SPECIFIC STYLES
+***************************/
+/**************************
+***************************/
+/**************************
+***************************/
+/**************************
+***************************/
+.page-about {
+	.cta {
+		.tagline {
+			span {
+				font-size: 33px;
+			}
+		}
+
+		p {
+		    color: #fff;
+		    line-height: 22px;
+		    margin: 42px 0 22px 0;
+		    font-size: 14px;			
+		}
+	}
+}	
