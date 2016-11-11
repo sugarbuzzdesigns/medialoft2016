@@ -297,6 +297,14 @@ var ml = ml || {};
 				closeWholeOverlay();
 			}
 
+			// if we are viewing a single video gallery, we want to
+			// show the close X when the video is playing so the user
+			// can exit playback. Then we hide it again when the user
+			// closes the video
+			if(typeof oneGalleryVideo !== 'undefined' && oneGalleryVideo){
+				this.$overlayCloseBtn.delay(200).fadeOut();
+			}
+
 			this.$galleryOverlay.removeClass('play-video');
 
 			function stopAndCloseOverlayVideo(){
@@ -466,6 +474,7 @@ var ml = ml || {};
 		playOverlayVideo: function(){
 			this.overlayVideoPlaying = true;
 
+			this.$overlayCloseBtn.fadeIn();
 			this.$galleryOverlay.addClass('play-video');
 			this.$galleryOverlayVideoWrap.css({height: this.$win.outerHeight()});
 			this.curVideoJs.posterImage.hide();
