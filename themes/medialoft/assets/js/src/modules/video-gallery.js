@@ -291,10 +291,13 @@ var ml = ml || {};
 			if(this.overlayVideoPlaying){
 				// console.log('stop video and return to open state');
 				stopAndCloseOverlayVideo();
+				_this.curVideoJs.posterImage.show();
 			} else {
 				// console.log('close open item completely');
 				closeWholeOverlay();
 			}
+
+			this.$galleryOverlay.removeClass('play-video');
 
 			function stopAndCloseOverlayVideo(){
 				_this.curVideoJs.pause();
@@ -465,7 +468,7 @@ var ml = ml || {};
 
 			this.$galleryOverlay.addClass('play-video');
 			this.$galleryOverlayVideoWrap.css({height: this.$win.outerHeight()});
-
+			this.curVideoJs.posterImage.hide();
 			this.curVideoJs.play();
 		},
 
