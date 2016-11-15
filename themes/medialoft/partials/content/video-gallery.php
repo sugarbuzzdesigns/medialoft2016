@@ -36,6 +36,9 @@ $hideGalleryTitle = get_post_meta( get_the_ID(), 'medialoft_disable_gallery_titl
 				<div></div>
 				<i></i>
 			</div>
+			<a class="gallery-overlay-logo" href="<?php echo get_site_url(); ?>/">
+				<img src="<?php bloginfo('template_directory'); ?>/assets/images/logos/ML_Logo_video_gallery_bw.png" alt="Media Loft" />
+			</a>
 		</div>
 		<div class="copy grid grid-pad">
 			<div class="col col-5-12 tablet-col-1-1 mobile-col-1-1">

@@ -118,7 +118,7 @@ var ml = ml || {};
 			this.queryParams = $.getQueryParameters();
 
 			if(typeof oneGalleryVideo != 'undefined' && oneGalleryVideo && this.$currentVideo === null){
-				$('.gallery-overlay').find('.close-video').hide();
+				this.$overlayCloseBtn.addClass('single-video');
 			}
 
 			// open video based on hash
@@ -302,9 +302,9 @@ var ml = ml || {};
 			// can exit playback. Then we hide it again when the user
 			// closes the video
 			if(typeof oneGalleryVideo !== 'undefined' && oneGalleryVideo){
-				this.$overlayCloseBtn.delay(200).fadeOut();
+				this.$overlayCloseBtn.addClass('single-video');
 			}
-
+			this.$overlayCloseBtn.removeClass('video-playing');
 			this.$galleryOverlay.removeClass('play-video');
 
 			function stopAndCloseOverlayVideo(){
@@ -474,7 +474,7 @@ var ml = ml || {};
 		playOverlayVideo: function(){
 			this.overlayVideoPlaying = true;
 
-			this.$overlayCloseBtn.fadeIn();
+			this.$overlayCloseBtn.addClass('video-playing');
 			this.$galleryOverlay.addClass('play-video');
 			this.$galleryOverlayVideoWrap.css({height: this.$win.outerHeight()});
 			this.curVideoJs.posterImage.hide();
